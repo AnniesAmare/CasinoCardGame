@@ -4,4 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity"/>
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:id="@+id/cardImage1"
+        android:layout_width="109dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/cardImage2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardImage2"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/cardImage2"
+        android:layout_width="109dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/cardImage3"
+        app:layout_constraintEnd_toStartOf="@+id/cardImage3"
+        app:layout_constraintStart_toEndOf="@+id/cardImage1"
+        app:layout_constraintTop_toTopOf="@+id/cardImage3"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/cardImage3"
+        android:layout_width="109dp"
+        android:layout_height="175dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/cardImageFocus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/betContentText"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/cardImageFocus"
+        android:layout_width="232dp"
+        android:layout_height="261dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardImage1"
+        app:srcCompat="@drawable/c01" />
+
+    <TextView
+        android:id="@+id/betTitleText"
+        android:layout_width="64dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:text="Bet:"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/betContentText"
+        android:layout_width="298dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="23dp"
+        android:text="Your bet"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/betTitleText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/biggerThanButton"
+        android:layout_width="128dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginBottom="66dp"
+        android:text="Bigger than"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/smallerThanButton"
+        android:layout_width="142dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="11dp"
+        android:text="Smaller Than"
+        app:layout_constraintBottom_toBottomOf="@+id/equalButton"
+        app:layout_constraintStart_toEndOf="@+id/equalButton"
+        app:layout_constraintTop_toTopOf="@+id/equalButton" />
+
+    <Button
+        android:id="@+id/equalButton"
+        android:layout_width="86dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="10dp"
+        android:text="Equal"
+        app:layout_constraintBottom_toBottomOf="@+id/biggerThanButton"
+        app:layout_constraintStart_toEndOf="@+id/biggerThanButton"
+        app:layout_constraintTop_toTopOf="@+id/biggerThanButton" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="411dp"
+        app:constraint_referenced_ids="cardImage2,cardImage1,cardImage3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
