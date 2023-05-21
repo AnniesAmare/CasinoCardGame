@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Deck {
 
-    public List<Card> activeDeck;
-    public List<Card> inactiveDeck;
+    public List<Card> activeDeck = new ArrayList<>();
+    public List<Card> inactiveDeck = new ArrayList<>();
     public Card cardback;
 
     public Deck(){

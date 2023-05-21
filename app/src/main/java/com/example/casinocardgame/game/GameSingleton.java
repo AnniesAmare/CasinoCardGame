@@ -14,6 +14,7 @@ public class GameSingleton {
         if (instance == null){
             instance = new GameSingleton();
             instance.createDeck();
+            instance.placeBet(instance.minBet);
         }
         return instance;
     }
@@ -24,7 +25,9 @@ public class GameSingleton {
     }
 
     public void placeBet(int bet){
-        this.bet = bet;
+        if (bet >= minBet && bet <= maxBet){
+            this.bet = bet;
+        }
     }
 
 

@@ -8,64 +8,68 @@
 
     <TextView
         android:id="@+id/currentBetText"
-        android:layout_width="172dp"
-        android:layout_height="60dp"
+        android:layout_width="144dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="28dp"
         android:text="100"
         android:textColor="@color/white"
+
         android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="@+id/PlusBetButton"
+        app:layout_constraintBottom_toBottomOf="@+id/plusBetButton"
         app:layout_constraintStart_toEndOf="@+id/minusBetButton"
-        app:layout_constraintTop_toTopOf="@+id/PlusBetButton"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/plusBetButton"
         tools:textAlignment="center" />
 
     <Button
         android:id="@+id/minusBetButton"
         android:layout_width="65dp"
         android:layout_height="69dp"
-        android:layout_marginStart="54dp"
+        android:layout_marginStart="16dp"
         android:text="-"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="@+id/currentBetText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/currentBetText"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="@+id/currentBetText" />
 
     <Button
-        android:id="@+id/PlusBetButton"
+        android:id="@+id/plusBetButton"
         android:layout_width="68dp"
-        android:layout_height="73dp"
-        android:layout_marginEnd="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="187dp"
         android:text="+"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/startGameButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintStart_toEndOf="@+id/currentBetText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/currentBetText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginBottom="280dp"
         android:text="Your current bet:"
         android:textAlignment="center"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/currentBetText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        app:layout_constraintBottom_toTopOf="@+id/startGameButton"
+        app:layout_constraintStart_toStartOf="@+id/currentBetText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/startGameButton"
-        android:layout_width="289dp"
-        android:layout_height="64dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="173dp"
         android:text="Start Game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentBetText"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/currentBetText2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
