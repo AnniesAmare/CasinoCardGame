@@ -10,9 +10,15 @@ import java.net.URL;
 public class BackgroundRunnable implements Runnable {
     public JSONObject resultObject;
     public String urlInput;
+    public JSONObject jsonInput;
 
     public BackgroundRunnable(String url){
         this.urlInput = url;
+        this.jsonInput = null;
+    }
+    public BackgroundRunnable(String url, JSONObject json){
+        this.urlInput = url;
+        this.jsonInput = json;
     }
 
     public JSONObject getResult(){

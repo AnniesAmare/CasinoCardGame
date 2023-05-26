@@ -14,35 +14,87 @@ import java.net.URL;
 public class ApiConnection {
     private static ApiConnection instance;
 
+    public String playerName = "TesterT";
+    public double balance = 100;
+
     public static ApiConnection getInstance(){
         if (instance == null){
             instance = new ApiConnection();
+            instance.loadBalance();
         }
         return instance;
     }
 
-    //http://192.168.1.227:5001/casino/game/get/3
+    //base url
+    //http://192.168.1.227:5001/casino/
 
-    public String getGameName(){
-        String name;
+    public double getPlayerBalance(){
+        Double balance;
 
-        BackgroundRunnable runnable = new BackgroundRunnable("http://192.168.1.227:5001/casino/game/get/3");
+        BackgroundRunnable runnable = new BackgroundRunnable("http://192.168.1.227:5001/casino/player/get/"+playerName);
         Thread backgroundThread = new Thread(runnable);
         backgroundThread.start();
         Wait();
-        JSONObject gameObject = runnable.getResult();
+        JSONObject playerObject = runnable.getResult();
         try {
-            if (gameObject != null){
-                name = gameObject.getString("name");
-                return name;
+            if (playerObject != null){
+                balance = playerObject.getDouble("balance");
+                return balance;
             } else {
-                return null;
+                return 0;
             }
         }
         catch (Exception e){
             throw new RuntimeException(e);
         }
 
+    }
+
+    public void loadBalance(){
+        double balance = getPlayerBalance();
+        this.balance = balance;
+    }
+
+    private void updateBalance(double amount){
+        //request url
+        String playerUrl = "https://localhost:5001/casino/player/update/"+playerName;
+        //constructing the request body
+        JSONObject balanceObject = new JSONObject();
+        try {
+            balanceObject.put("balance", amount);}
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        BackgroundRunnable runnable = new BackgroundRunnable(playerUrl, balanceObject);
+        Thread backgroundThread = new Thread(runnable);
+        backgroundThread.start();
+        Wait();
+        JSONObject playerObject = runnable.getResult();
+        try {
+            if (playerObject != null){
+                balance = playerObject.getDouble("balance");
+                this.balance = balance;
+            } else {
+                this.balance = 0;
+            }
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+    public void processGameOver(int bet, boolean isWon){
+        double betInput = (double) bet;
+        double newBalance;
+        if (isWon){
+            newBalance = this.balance + betInput;
+        } else {
+            newBalance = this.balance - betInput;
+        }
+        //updateBalance(newBalance);
     }
 
     private void Wait() {

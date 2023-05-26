@@ -16,7 +16,7 @@ public class Card implements Comparable<Card>{
         this.name = suitName + valueName;
 
         //testing
-        System.out.println(this.name);
+        //System.out.println(this.name);
     }
 
     public String getName(){

@@ -85,6 +85,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 card3 = gameSingleton.deck.drawCard();
                 setCardView(card3, cardFocusView);
                 gameOver = isWrongGuess(view, card2, card3);
+                if (!gameOver){
+                    gameSingleton.setGameWon(true);
+                    gameOver = true;
+                }
             }
             if (gameOver){
                 biggerThan.setVisibility(view.GONE);
@@ -95,7 +99,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (view == gameOverButton){
             Intent endIntent = new Intent(this, EndActivity.class);
-            //endIntent.putExtra("variableName", variable);
             startActivity(endIntent);
         }
 

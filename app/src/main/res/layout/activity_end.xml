@@ -6,13 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".EndActivity">
 
+    <Button
+        android:id="@+id/restartGameButton"
+        android:layout_width="278dp"
+        android:layout_height="117dp"
+        android:layout_marginBottom="86dp"
+        android:text="Play Again"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/currentBalanceTextEnd2"
+        android:layout_width="154dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="11dp"
+        android:text="Your Balance:"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/currentBalanceTextEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameResultTextView" />
+
+    <TextView
+        android:id="@+id/currentBalanceTextEnd"
+        android:layout_width="95dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="11dp"
+        android:text="100"
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentBalanceTextEnd2" />
+
     <TextView
         android:id="@+id/gameOverTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="158dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginBottom="39dp"
         android:text="GAME OVER"
+        android:textAlignment="center"
+        android:textColor="#70A3F1"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/gameResultTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="173dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="76dp" />
+
+    <TextView
+        android:id="@+id/gameResultTextView"
+        android:layout_width="280dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="39dp"
+        android:text="You lost 20 game chips"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameOverTextView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="461dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="329dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

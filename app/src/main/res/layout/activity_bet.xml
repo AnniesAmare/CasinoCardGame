@@ -7,74 +7,122 @@
     tools:context=".BetActivity">
 
     <TextView
-        android:id="@+id/currentBetText"
-        android:layout_width="144dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="52dp"
+        android:id="@+id/currentBalanceText"
+        android:layout_width="95dp"
+        android:layout_height="39dp"
         android:text="100"
+        android:textAlignment="center"
+
         android:textColor="@color/white"
-
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/startGameButton"
-        app:layout_constraintStart_toEndOf="@+id/minusBetButton"
-        app:layout_constraintTop_toBottomOf="@+id/currentBetText2"
-        app:layout_constraintVertical_bias="0.184"
-        tools:textAlignment="center" />
-
-    <Button
-        android:id="@+id/minusBetButton"
-        android:layout_width="65dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="16dp"
-        android:text="-"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/startGameButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/plusBetButton"
-        android:layout_width="67dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="143dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="187dp"
-        android:text="+"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/startGameButton"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/currentBetText2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentBalanceText2" />
 
     <TextView
         android:id="@+id/currentBetText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
         android:layout_marginTop="104dp"
-        android:layout_marginBottom="280dp"
         android:text="Your current bet:"
         android:textAlignment="center"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentBalanceText" />
+
+    <Button
+        android:id="@+id/plusBetButton"
+        android:layout_width="67dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="25dp"
+        android:text="+"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/startGameButton"
         app:layout_constraintStart_toEndOf="@+id/currentBetText"
-        app:layout_constraintStart_toStartOf="@+id/currentBetText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/currentBetText"
+        android:layout_width="144dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="50dp"
+        android:text="100"
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentBetText2" />
+
+    <Button
+        android:id="@+id/minusBetButton"
+        android:layout_width="65dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="25dp"
+        android:text="-"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/startGameButton"
+        app:layout_constraintEnd_toStartOf="@+id/currentBetText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/currentBalanceText2"
+        android:layout_width="154dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="14dp"
+        android:text="Your Balance:"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/startGameButton"
         android:layout_width="278dp"
         android:layout_height="117dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="173dp"
+        android:layout_marginBottom="86dp"
         android:text="Start Game"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentBetText2" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="76dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="482dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="300dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="300dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

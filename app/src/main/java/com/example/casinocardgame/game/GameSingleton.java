@@ -1,5 +1,7 @@
 package com.example.casinocardgame.game;
 
+import com.example.casinocardgame.API.ApiConnection;
+
 public class GameSingleton {
 
     private static GameSingleton instance;
@@ -8,7 +10,8 @@ public class GameSingleton {
     public int minBet = 10;
     public int maxBet = 250;
 
-    public String playerName;
+    public boolean gameWon = false;
+
 
     public static GameSingleton getInstance(){
         if (instance == null){
@@ -19,6 +22,7 @@ public class GameSingleton {
         return instance;
     }
 
+
     private void createDeck(){
         Deck deck = new Deck();
         this.deck = deck;
@@ -28,6 +32,17 @@ public class GameSingleton {
         if (bet >= minBet && bet <= maxBet){
             this.bet = bet;
         }
+    }
+
+    public void setGameWon(Boolean result){
+        this.gameWon = result;
+    }
+
+    public void gameOver(){
+        ApiConnection api = ApiConnection.getInstance();
+        api.processGameOver(bet, gameWon);
+        this.gameWon = false;
+        this.bet = minBet;
     }
 
 
