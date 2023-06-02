@@ -46,6 +46,7 @@ public class BackgroundRunnable implements Runnable {
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             System.out.println(con);
             con.setRequestMethod("GET");
+            con.setRequestProperty("Accept", "application/json");
             InputStream i = con.getInputStream();
 
             BufferedReader in = new BufferedReader(new InputStreamReader(i));
@@ -55,6 +56,7 @@ public class BackgroundRunnable implements Runnable {
                 value += inputLine + "\n";
             }
             in.close();
+            con.disconnect();
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }

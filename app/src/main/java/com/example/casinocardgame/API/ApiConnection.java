@@ -86,8 +86,8 @@ public class ApiConnection {
 
     }
 
-    public void processGameOver(int bet, boolean isWon){
-        double betInput = (double) bet;
+    public void processGameOver(double bet, boolean isWon){
+        double betInput = bet;
         double newBalance;
         if (isWon){
             newBalance = this.balance + betInput;

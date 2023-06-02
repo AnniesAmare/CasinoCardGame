@@ -48,7 +48,7 @@ public class BetActivity extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        int newBet = gameSingleton.bet;
+        double newBet = gameSingleton.bet;
         if (view == inceaseBet) newBet = gameSingleton.bet + 10;
         if (view == decreaseBet) newBet = gameSingleton.bet - 10;
         if (newBet <= apiConnection.balance) {

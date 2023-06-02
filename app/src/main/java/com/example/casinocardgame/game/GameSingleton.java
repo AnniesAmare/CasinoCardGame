@@ -6,9 +6,9 @@ public class GameSingleton {
 
     private static GameSingleton instance;
     public Deck deck;
-    public int bet;
-    public int minBet = 10;
-    public int maxBet = 250;
+    public double bet;
+    public double minBet = 10;
+    public double maxBet = 250;
 
     public boolean gameWon = false;
 
@@ -28,7 +28,7 @@ public class GameSingleton {
         this.deck = deck;
     }
 
-    public void placeBet(int bet){
+    public void placeBet(double bet){
         if (bet >= minBet && bet <= maxBet){
             this.bet = bet;
         }
